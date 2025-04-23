@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+  .theme-light {
+    background-color: #f8f9fa;
+    color: #111;
+  }
+  .theme-dark {
+    background-color: #121212;
+    color: #eee;
+  }
+  .theme-warm {
+    background-color: #ffeedb;
+    color: #4b2e2e;
+  }
+  .theme-aws {
+    background-color: #232f3e;
+    color: #f0f0f0;
+  }
+  .theme-gcp {
+    background-color: #4285f4;
+    color: #ffffff;
+  }
+  

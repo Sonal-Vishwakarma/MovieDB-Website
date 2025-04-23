@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
@@ -9,9 +9,16 @@ import MovieDetailPage from './pages/MovieDetailPage';
 import ActorDetailPage from './pages/ActorDetailPage';
 
 const App = () => {
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    document.body.className = ''; // clear existing
+    document.body.classList.add(`theme-${theme}`);
+  }, [theme]);
+
   return (
-    <div className="bg-gray-900 min-h-screen">
-      <Navbar />
+    <div style={{ backgroundColor: 'var(--bg-color)', color: 'var(--text-color)' }} className="min-h-screen transition-all duration-300">
+      <Navbar setTheme={setTheme} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/top-rated" element={<TopRatedPage />} />
@@ -25,3 +32,5 @@ const App = () => {
 };
 
 export default App;
+
+
